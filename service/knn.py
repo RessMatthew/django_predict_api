@@ -28,8 +28,8 @@ class Knn:
         datasets, labels = self._csv_util.data_handle(csv_file, CONSTANTS.ARCSVLABEL)
 
         # 训练集和测试集划分
-        X_train = datasets[:125]  # 第0到125个数
-        y_train = labels[:125]
+        X_train = datasets[:120]  # 第0到125个数
+        y_train = labels[:120]
         X_test = datasets[90:]  # 第90到最后一个数
         y_test = labels[90:]
 
