@@ -96,7 +96,7 @@ base64str为图片的base64编码字符串
 
 ![image-20220910212937711](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220910212937711.png)
 
-### 2. 获取数据集用k-最近邻算法训练模型得到的测试结果图
+### 3. 获取数据集用k-最近邻算法训练模型得到的测试结果图
 
 #### Request
 
