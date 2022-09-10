@@ -1,3 +1,5 @@
+from collections import Counter
+
 from matplotlib import pyplot as plt
 from sklearn import metrics
 import matplotlib as mpl
@@ -55,5 +57,25 @@ class PlotUtil:
                           loc="center")
         table.set_fontsize(14)
         table.scale(1.5, 1.5)
+        # plt.show()
+        return plt
+
+    def plot_pie(self, predict_array):
+        """
+        Description:        由预测结果array绘制有缺陷和无缺陷的饼状图
+        :param:
+            y_predict:      预测结果array
+        :return: 返回图片对象
+        """
+        Counter(predict_array)  # {label:sum(label)}
+        Yes = sum(predict_array == 1)
+        No = sum(predict_array == 0)
+        plt.rcParams['font.sans-serif'] = 'SimHei'  # 设置中文显示
+        plt.figure(figsize=(6, 6))  # 将画布设定为正方形，则绘制的饼图是正圆
+        label = ['有缺陷数', '无缺陷数']  # 定义饼图的标签，标签是列表
+        explode = [0.01, 0.05]  # 设定各项距离圆心n个半径
+        values = [Yes, No]
+        plt.pie(values, explode=explode, labels=label, autopct='%1.1f%%')  # 绘制饼图
+        plt.title('缺陷数目')
         # plt.show()
         return plt
