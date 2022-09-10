@@ -10,4 +10,7 @@ urlpatterns = [
     # POST，随机森林测试并评价模型
     path('rf/training/', views.rf_training),
 
+    # POST，knn训练测试并评价模型
+    path('knn/training/', views.knn_training),
+
  ]
