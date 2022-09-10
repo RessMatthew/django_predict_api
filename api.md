@@ -96,3 +96,37 @@ base64str为图片的base64编码字符串
 
 ![image-20220910212937711](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220910212937711.png)
 
+### 2. 获取数据集用k-最近邻算法训练模型得到的测试结果图
+
+#### Request
+
+- Method: **POST**
+- URL: `knn/training/`
+- Parameters:
+
+```json
+csv_file (类型为文件File)
+```
+
+
+
+#### Response
+
+- success         
+
+base64str为图片的base64编码字符串
+
+```json
+{
+    "code": 200,
+    "message": "请求成功",
+    "base64str": "iVBORw0KGgoAAAANSUhEUgAAAooAAAOXRFWHRTb2Z0...."
+}
+```
+
+
+
+![Snipaste_2022-09-10_21-27-31](https://aliyun-oss-image.oss-cn-shenzhen.aliyuncs.com/img/202209102128764.png)
+
+
+
