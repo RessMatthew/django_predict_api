@@ -26,18 +26,18 @@ class RandomForest:
         """
         datasets, labels = self._csv_util.data_handle(csv_file, CONSTANTS.ARCSVLABEL)
 
+        """....................................算法核心start...................................."""
         # 训练集和测试集划分
         X_train = datasets[:115]  # 第0到115个数
         y_train = labels[:115]
         X_test = datasets[70:]  # 第70到最后一个数
         y_test = labels[70:]
-
         # 随机森林分类器
         clf = RandomForestClassifier()
         # n_estimators两百棵决策树,random_state控制随机状态使得结果复现
         clf = RandomForestClassifier(n_estimators=200, random_state=0)
         clf.fit(X_train, y_train)  # 使用训练集对分类器训练
-        # joblib.dump(clf, "../static/training_model/random.pkl")
+        """.....................................算法核心end....................................."""
 
         joblib.dump(clf, "static/training_model/random.pkl")
         y_predict = clf.predict(X_test)  # 使用分类器对测试集进行预测
@@ -52,5 +52,6 @@ class RandomForest:
         # weightedF1：准确率和召回率的加权调和平均
         weighted = metrics.f1_score(y_test, y_predict, average='weighted')
 
-        self._plot_util.plot_roc(y_test, y_predict, auc, macro, macro_recall, weighted)
+        plot = self._plot_util.plot_roc(y_test, y_predict, auc, macro, macro_recall, weighted)
+        plot.savefig('static/images/rf_result.png')  # 将ROC图片进行保存
 

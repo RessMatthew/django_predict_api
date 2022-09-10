@@ -12,13 +12,14 @@ class PlotUtil:
     def plot_roc(self, test_list, predict_list, auc, macro, macro_recall, weighted):
         """
         Description:        绘制ROC曲线
-        Parameters:
+        :param:
             test_list:      测试集标签列表
             predict_list:   预测结果集标签列表
             auc:            预测准确率输出
             macro:          预测宏平均精确率输出
             macro_recall:   预测宏平均召回率输出：召回率
             weighted:       预测平均f1-score输出：F1
+        :return: 返回图片对象
         """
         # 创建一个1行2列的画布
         figure, axes = plt.subplots(ncols=1, nrows=2, figsize=(6.5, 6.5), dpi=100)
@@ -54,5 +55,5 @@ class PlotUtil:
                           loc="center")
         table.set_fontsize(14)
         table.scale(1.5, 1.5)
-        plt.show()
-        # plt.savefig('figures/PC5.png') #将ROC图片进行保存
+        # plt.show()
+        return plt
