@@ -1,3 +1,30 @@
+## 项目规范
+
+参考csv_util.py
+
+* 自定义类：在实例化时候，前面用`_`比如，_csv_util = CSVUtil()
+
+* 常量：全部大写默认为常量，在utils/constans下
+
+
+
+## 注意事项
+
+### 路径问题
+
+```python
+# 第一种路径
+joblib.dump(clf, "static/training_model/random.pkl")
+# 第二种路径
+joblib.dump(clf, "../static/training_model/random.pkl")
+```
+
+Django项目在运行时，在工程文件setting.py下有`STATIC_URL = "static/"`配置，所以涉及接口定义的函数，的路径应当用第一种。
+
+一般编写代码调试时，在运行`if __name__ == '__main__':`时，没有用到`STATIC_URL`配置，用第二种路径。
+
+
+
 ## 使用virtualenv管理虚拟环境
 
 1. 提交方
@@ -110,13 +137,13 @@ from django.http import JsonResponse  #接口返回的是json，需要引入的�
 from django.views.decorators.csrf import csrf_exempt   #post接口需要引入的信息
 @csrf_exempt
 def post(request):
-    if request.method == "GET": #获取判断请求方式
-        request_dict = request.body  #获取接口请求发送过来的信息
+    if request.method == "POST": #获取判断请求方式
+        request_dict = request.POST  #获取接口请求发送过来的信息
         query = request_dict["query"] #获取接口请求发送过信息
         '''
         在这里可以写接口在发送请求后的一系列处理方法
         '''
-        request_data = {"code":200,"message":"请求成功"}
+        request_data = {"code":200,"message":"请求成功","test":query}
         return JsonResponse(request_data)
 ```
 
