@@ -14,6 +14,39 @@ data:image/jpeg;base64,**[base64编码]**
 
 
 
+### 框架自带接口
+
+`trainingresult/`
+
+```json
+[
+    {
+        "type": "rf",
+        "filename": "ar1.csv",
+        "time": "2022-09-11 16:43:24",
+        "auc": "0.9607843137254902",
+        "macro": "0.8229166666666666",
+        "macro_recall": "0.8229166666666666",
+        "weighted": "0.9607843137254902",
+        "result_url": "https://defect-predict.oss-cn-hangzhou.aliyuncs.com/images/cc6905d8-31ad-11ed-a318-acde48001122.png"
+    },
+    {
+        "type": "rf",
+        "filename": "ar1.csv",
+        "time": "2022-09-11 17:30:52",
+        "auc": "0.9607843137254902",
+        "macro": "0.8229166666666666",
+        "macro_recall": "0.8229166666666666",
+        "weighted": "0.9607843137254902",
+        "result_url": "https://defect-predict.oss-cn-hangzhou.aliyuncs.com/images/6db2d7ec-31b4-11ed-94b8-acde48001122.png"
+    }
+]
+```
+
+![image-20220911180804761](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220911180804761.png)
+
+
+
 # 接口
 
 ### 1. 获取数据集用随机森林算法训练模型得到的测试结果图
