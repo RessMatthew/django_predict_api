@@ -15,7 +15,6 @@ class CSVUtil:
         Parameters:
             filename：csv数据集路径
             last_label：csv数据集最后一列表示软件没有缺陷的符号
-            Returns:
         Returns:
              list_datasets：数据集特征列表
              category_labels:数据标签列表

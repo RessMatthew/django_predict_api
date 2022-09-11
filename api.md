@@ -34,19 +34,19 @@ csv_file (类型为文件File)
 
 - success         
 
-base64str为图片的base64编码字符串
+result_url为图片公网可访问url
 
 ```json
 {
     "code": 200,
     "message": "请求成功",
-    "base64str":"/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEB......",
+    "result_url": "https://defect-predict.oss-cn-hangzhou.aliyuncs.com/images/cc6905d8-31ad-11ed-a318-acde48001122.png"
 }
 ```
 
 
 
-![image-20220910213020022](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220910213020022.png)
+![image-20220911164614717](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220911164614717.png)
 
 
 
@@ -129,4 +129,34 @@ base64str为图片的base64编码字符串
 ![Snipaste_2022-09-10_21-27-31](https://aliyun-oss-image.oss-cn-shenzhen.aliyuncs.com/img/202209102128764.png)
 
 
+
+### 4. 获取当前数据库中已有训练记录
+
+#### Request
+
+- Method: **GET**
+- URL: `get-all-result/`
+- Parameters:
+
+```json
+无
+```
+
+
+
+#### Response
+
+- success         
+
+```json
+{
+    "code": 200,
+    "message": "请求成功",
+    "result_array": "[{\"model\": \"predict_app.trainingresult\", \"pk\": 1, \"fields\": {\"type\": \"test\", \"filename\": \"test\", \"time\": \"test\", \"auc\": \"test\", \"macro\": \"test\", \"macro_recall\": \"test\", \"weighted\": \"result_url\", \"result_url\": \"\"}}, {\"model\": \"predict_app.trainingresult\", \"pk\": 2, \"fields\": {\"type\": \"test\", \"filename\": \"test\", \"time\": \"test\", \"auc\": \"test\", \"macro\": \"test\", \"macro_recall\": \"test\", \"weighted\": \"test\", \"result_url\": \"test\"}}, {\"model\": \"predict_app.trainingresult\", \"pk\": 3, \"fields\": {\"type\": \"rf\", \"filename\": \"ar1.csv\", \"time\": \"2022-09-11 16:43:24\", \"auc\": \"0.9607843137254902\", \"macro\": \"0.8229166666666666\", \"macro_recall\": \"0.8229166666666666\", \"weighted\": \"0.9607843137254902\", \"result_url\": \"https://defect-predict.oss-cn-hangzhou.aliyuncs.com/images/cc6905d8-31ad-11ed-a318-acde48001122.png\"}}]"
+}
+```
+
+![](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220911171050488.png)
+
+![image-20220911171111158](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220911171111158.png)
 

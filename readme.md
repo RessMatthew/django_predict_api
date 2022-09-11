@@ -1,12 +1,21 @@
-## 项目规范
-
-参考csv_util.py
-
-* 自定义类：在实例化时候，前面用`_`比如，_csv_util = CSVUtil()
-
-* 常量：全部大写默认为常量，在utils/constans下
 
 
+项目运行后，加/admin可看到TrainingReuslt模型
+
+管理员：`admin` 密码：`123456`
+
+## 使用virtualenv管理虚拟环境
+
+1. 提交方
+   1. 将.venv加入.gitignore
+   2. 装完库后执行`pip freeze > requirements.txt`
+2. 使用方
+   1. clone项目后，pycharm检测到requirements.txt，会建议你创建虚拟环境，默认选择即可
+   2. 执行`pip install -r requirements.txt`根据文件中库版本全部自动安装
+
+
+
+**安装了新库提交前，记得执行pip freeze > requirements.txt**
 
 ## 注意事项
 
@@ -23,20 +32,13 @@ Django项目在运行时，在工程文件setting.py下有`STATIC_URL = "static/
 
 一般编写代码调试时，在运行`if __name__ == '__main__':`时，没有用到`STATIC_URL`配置，用第二种路径。
 
+### 项目规范
 
+参考csv_util.py
 
-## 使用virtualenv管理虚拟环境
+* 自定义类：在实例化时候，前面用`_`比如，_csv_util = CSVUtil()
 
-1. 提交方
-   1. 将.venv加入.gitignore
-   2. 装完库后执行`pip freeze > requiremnets.txt`
-2. 使用方
-   1. clone项目后，pycharm检测到requiremnets.txt，会建议你创建虚拟环境，默认选择即可
-   2. 执行`pip install -r requirements.txt`根据文件中库版本全部自动安装
-
-
-
-**安装了新库提交前，记得执行pip freeze > requiremnets.txt**
+* 常量：全部大写默认为常量，在utils/constans下
 
 
 

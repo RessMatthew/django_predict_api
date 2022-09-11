@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     '101.34.37.235',
     '127.0.0.1',
     '0.0.0.0:8000',
-                 ]
+]
 
 # Application definition
 
@@ -44,6 +44,9 @@ INSTALLED_APPS = [
 
     #  注册predict_app
     "predict_app",
+
+    #  注册django_rest_framework
+    "rest_framework"
 ]
 
 MIDDLEWARE = [

@@ -12,7 +12,7 @@ class ImageUtil:
         Description:将图片文件转为base64字符串
         :param:
             image_path:文件路径
-        :return:
+        :return:base64编码字符串
         """
         with open(image_path, 'rb') as f:
             image_data = f.read()

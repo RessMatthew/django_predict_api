@@ -1,11 +1,17 @@
 from django.contrib import admin
-from django.urls import path
-
+from django.urls import path, include
+from rest_framework import routers
 from predict_app import views
+
+router = routers.DefaultRouter()
+router.register(r'trainingresult', views.TrainingResultViewSet)  # 路由到TrainingResultViewSet视图
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/v1/alarm/', views.get), #get为view.py中的函数名
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    # GET，获得所有训练结果
+    path('get-all-result/', views.get_all_result),
 
     # POST，随机森林测试并评价模型
     path('rf/training/', views.rf_training),
@@ -16,4 +22,4 @@ urlpatterns = [
     # POST，knn训练测试并评价模型
     path('knn/training/', views.knn_training),
 
- ]
+]

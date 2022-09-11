@@ -7,6 +7,19 @@ from sklearn.ensemble import RandomForestClassifier
 from utils.csv_util import CSVUtil
 from utils.plot_util import PlotUtil
 from utils.constants import CONSTANTS
+from utils.oss_util import OSSUtil
+import time
+
+training_result_dict = {
+    'type': '',
+    'filename': '',
+    'time': '',
+    'auc': '',
+    'macro': '',
+    'macro_recall': '',
+    'weighted': '',
+    'result_url': '',
+}
 
 
 class RandomForest:
@@ -14,6 +27,7 @@ class RandomForest:
 
     _csv_util = CSVUtil()
     _plot_util = PlotUtil()
+    _oss_util = OSSUtil()
 
     def __init__(self, ):
         """Constructor for RandomForest"""
@@ -23,6 +37,8 @@ class RandomForest:
         Description:
         Parameters:
             csv_file:csv文件
+        :return:
+            training_result_dict:训练结果字典
         """
         datasets, labels = self._csv_util.data_handle(csv_file, CONSTANTS.ARCSVLABEL)
 
@@ -54,6 +70,18 @@ class RandomForest:
 
         plot = self._plot_util.plot_roc(y_test, y_predict, auc, macro, macro_recall, weighted)
         plot.savefig('static/images/rf_result.png')  # 将ROC图片进行保存
+
+        result_url = self._oss_util.put_object('static/images/rf_result.png')  # 图片上传OSS
+        """.....................................转储训练结果字典....................................."""
+        training_result_dict['type'] = "rf"
+        training_result_dict['filename'] = csv_file.name
+        training_result_dict['time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+        training_result_dict['auc'] = str(auc)
+        training_result_dict['macro'] = macro
+        training_result_dict['macro_recall'] = macro_recall
+        training_result_dict['weighted'] = weighted
+        training_result_dict['result_url'] = result_url
+        return training_result_dict
 
     def rf_predict(self, csv_file):
         """
