@@ -49,7 +49,6 @@ class RandomForest:
         X_test = datasets[70:]  # 第70到最后一个数
         y_test = labels[70:]
         # 随机森林分类器
-        clf = RandomForestClassifier()
         # n_estimators两百棵决策树,random_state控制随机状态使得结果复现
         clf = RandomForestClassifier(n_estimators=200, random_state=0)
         clf.fit(X_train, y_train)  # 使用训练集对分类器训练

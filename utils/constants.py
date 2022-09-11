@@ -15,3 +15,4 @@ class CONSTANTS:
     RF_RESULT = "static/images/rf_result.png"
     RF_PREDICT = "static/images/rf_predict.png"
     KNN_RESULT = "static/images/knn_result.png"
+    KNN_PREDICT = "static/images/knn_predict.png"
