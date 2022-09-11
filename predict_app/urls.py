@@ -16,4 +16,9 @@ urlpatterns = [
     # POST，knn训练测试并评价模型
     path('knn/training/', views.knn_training),
 
+    #POST，knn已训练模型预测数据集
+    path('knn/predict/', views.knn_predict),
+
+
+
  ]

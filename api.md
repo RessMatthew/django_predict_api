@@ -130,3 +130,55 @@ base64str为图片的base64编码字符串
 
 
 
+### 4. 获取用k最近邻预测数据集的饼状图
+
+#### Request
+
+- Method: **POST**
+- URL: `knn/predict/`
+- Parameters:
+
+```json
+csv_file (类型为文件File)
+```
+
+
+
+#### Response
+
+- success  **已生成训练模型**        
+
+base64str为图片的base64编码字符串
+
+```json
+{
+    "code": 200,
+    "message": "请求成功",
+    "accuracy": 0.9834710743801653,
+    "base64str":"iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjA......",
+}
+```
+
+
+
+![Snipaste_2022-09-11_14-17-35](https://aliyun-oss-image.oss-cn-shenzhen.aliyuncs.com/img/202209111418939.png)
+
+
+
+
+
+- failure  **未生成训练模型**        
+
+base64str为图片的base64编码字符串
+
+```json
+{
+    "code": 201,
+    "message": "未预先生成训练模型"
+}
+```
+
+
+
+![Snipaste_2022-09-11_14-18-01](https://aliyun-oss-image.oss-cn-shenzhen.aliyuncs.com/img/202209111418411.png)
+
