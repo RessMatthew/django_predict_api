@@ -112,15 +112,15 @@ def knn_training(request):
 
         csv_file = request.FILES.get("csv_file")
 
-        # 预测结果图片，写入static/images/knn_result.png
-        _knn.knn_training(csv_file)
-
-        base64str = _image_util.to_base64(CONSTANTS.KNN_RESULT)
+        # 预测结果图片，写入static/images/knn_result.png,同时上传oss
+        training_result_dict = _knn.knn_training(csv_file)
+        # 持久化
+        _sql_util.add_training_result(training_result_dict)
 
         request_data = {
             "code": 200,
             "message": "请求成功",
-            "base64str": str(base64str),
+            "result_url": training_result_dict['result_url'],
         }
         return JsonResponse(request_data)
 

@@ -79,7 +79,7 @@ result_url为图片公网可访问url
 
 
 
-![image-20220910213020022](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220910213020022.png)
+![Snipaste_2022-09-11_18-46-32](https://aliyun-oss-image.oss-cn-shenzhen.aliyuncs.com/img/202209111846386.png)
 
 
 
@@ -153,13 +153,13 @@ base64str为图片的base64编码字符串
 {
     "code": 200,
     "message": "请求成功",
-    "base64str": "iVBORw0KGgoAAAANSUhEUgAAAooAAAOXRFWHRTb2Z0...."
+    "result_url": "https://defect-predict.oss-cn-hangzhou.aliyuncs.com/images/15772c04-31bf-11ed-abd6-a4b1c10b4293.png"
 }
 ```
 
 
 
-![Snipaste_2022-09-10_21-27-31](https://aliyun-oss-image.oss-cn-shenzhen.aliyuncs.com/img/202209102128764.png)
+![Snipaste_2022-09-11_18-47-15](https://aliyun-oss-image.oss-cn-shenzhen.aliyuncs.com/img/202209111847334.png)
 
 
 
