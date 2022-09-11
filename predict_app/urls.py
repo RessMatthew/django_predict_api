@@ -7,6 +7,7 @@ router = routers.DefaultRouter()
 router.register(r'trainingresult', views.TrainingResultViewSet)  # 路由到TrainingResultViewSet视图
 
 urlpatterns = [
+    path('', include(router.urls)),  # 使用router路由
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
