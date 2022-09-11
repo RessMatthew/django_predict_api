@@ -48,7 +48,10 @@ INSTALLED_APPS = [
     "predict_app",
 
     #  注册django_rest_framework
-    "rest_framework"
+    "rest_framework",
+
+    #  注册解决跨域
+    "corsheaders"
 ]
 
 MIDDLEWARE = [
@@ -59,9 +62,18 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    #  解决跨域
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
 ]
 
 ROOT_URLCONF = "django_predict_api.urls"
+#  解决跨域
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+
 
 TEMPLATES = [
     {
