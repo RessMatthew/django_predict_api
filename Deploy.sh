@@ -1,5 +1,5 @@
 #关闭正在运行的进程
-PID=$(ps -ef | grep "python manage.py runserver" | grep -v grep | awk '{ print $2 }')
+PID=$(ps -ef | grep "python manage.py runserver" | grep -v grep | grep -v venv | awk '{ print $2 }')
 if [ -z "$PID" ]
 then
     echo '目前django不在运行中'
