@@ -26,4 +26,10 @@ urlpatterns = [
     # POST，knn已训练模型预测数据集
     path('knn/predict/', views.knn_predict),
 
+    # POST，kmeans训练测试并评价模型
+    path('kmeans/training/', views.kmeans_training),
+
+    # POST，kmeans已训练模型预测数据集
+    path('kmeans/predict/', views.kmeans_predict),
+
 ]

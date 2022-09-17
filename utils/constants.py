@@ -16,3 +16,5 @@ class CONSTANTS:
     RF_PREDICT = "static/images/rf_predict.png"
     KNN_RESULT = "static/images/knn_result.png"
     KNN_PREDICT = "static/images/knn_predict.png"
+    KMEANS_RESULT = "static/images/kmeans_result.png"
+    KMEANS_PREDICT = "static/images/kmeans_predict.png"
