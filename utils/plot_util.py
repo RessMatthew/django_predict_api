@@ -11,7 +11,7 @@ class PlotUtil:
     def __init__(self, ):
         """Constructor for PlotUtil"""
 
-    def plot_roc(self, test_list, predict_list, auc, macro, macro_recall, weighted):
+    def plot_roc(self, test_list, predict_list, auc, macro, macro_recall, weighted, tittle):
         """
         Description:        绘制ROC曲线
         :param:
@@ -33,7 +33,7 @@ class PlotUtil:
         false_positive_rate, true_positive_rate, thresholds = metrics.roc_curve(test_list, predict_list)  # 真阳性，假阳性，阈值
         roc_auc = metrics.auc(false_positive_rate, true_positive_rate)  # 计算AUC值，ROC曲线下的面积
         print('AUC=' + str(roc_auc))
-        plt.title('AR1-ROC')
+        plt.title(tittle)
         plt.plot(false_positive_rate, true_positive_rate, 'b', label='AUC = %0.4f' % roc_auc)
         plt.legend(loc='lower right')
         plt.plot([0, 1], [0, 1], 'r--')

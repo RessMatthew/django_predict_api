@@ -12,6 +12,7 @@ from utils.oss_util import OSSUtil
 from utils.plot_util import PlotUtil
 from utils.constants import CONSTANTS
 
+
 class Knn:
     '''用于实现knn模型的训练和预测'''
 
@@ -32,16 +33,12 @@ class Knn:
         ''' ---------------------------------数据处理--------------------------------------- '''
         datasets, labels = self._csv_util.data_handle(csv_file, CONSTANTS.ARCSVLABEL)
         # 训练集和测试集划分
-        X_train = datasets[:120]  # 第0到125个数
-        y_train = labels[:120]
-        X_test = datasets[90:]  # 第90到最后一个数
-        y_test = labels[90:]
+        X_train, y_train, X_test, y_test = self._csv_util.divide_training_test(datasets, labels)
 
         ''' ----------------------------------算法核心-------------------------------------- '''
         # 选取最近的12个节点，采用曼哈顿距离，每个节点权重随距离减小
-        clf = KNeighborsClassifier(n_neighbors=12,p=1,weights="distance")
+        clf = KNeighborsClassifier(n_neighbors=12, p=1, weights="distance")
         clf.fit(X_train, y_train)  # 使用训练集对分类器训练
-
 
         ''' ---------------------------------模型持久化-------------------------------------- '''
         joblib.dump(clf, "static/training_model/knn.pkl")
@@ -58,7 +55,7 @@ class Knn:
         # weightedF1：准确率和召回率的加权调和平均
         weighted = metrics.f1_score(y_test, y_predict, average='weighted')
 
-        plot = self._plot_util.plot_roc(y_test, y_predict, auc, macro, macro_recall, weighted)
+        plot = self._plot_util.plot_roc(y_test, y_predict, auc, macro, macro_recall, weighted, "Knn-ROC")
         plot.savefig('static/images/knn_result.png')  # 将ROC图片进行保存
 
         result_url = self._oss_util.put_object('static/images/knn_result.png')  # 图片上传OSS
@@ -98,7 +95,7 @@ class Knn:
             y_predict = clf0.predict(X_test)  # 使用分类器对测试集进行预测
             np.savetxt('static/result/knn_result.txt', y_predict)
 
-            #画饼图
+            # 画饼图
             plot = self._plot_util.plot_pie(y_predict)
             plot.savefig('static/images/knn_predict.png')  # 将ROC图片进行保存
 
@@ -107,4 +104,3 @@ class Knn:
             return status_bool, accuracy
         else:
             return status_bool, accuracy
-

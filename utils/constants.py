@@ -9,7 +9,8 @@ class CONSTANTS:
     AR6CSV = "../static/dataset/SOFTLAB/ar6.csv"
 
     #  数据集的最后一行标签名：软件缺陷标识
-    ARCSVLABEL = "b'clean'"
+    # ARCSVLABEL = "b'clean'"
+    ARCSVLABEL = 'Y'
 
     # 模型评价和数据集预测图片路径
     RF_RESULT = "static/images/rf_result.png"

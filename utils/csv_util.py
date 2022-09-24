@@ -36,6 +36,14 @@ class CSVUtil:
                 category_labels.append(1)
         return list_datasets, category_labels
 
+    def divide_training_test(self, datasets, labels):
+        # 训练集和测试集划分
+        X_train = datasets[:700]  # 第0到700个数
+        y_train = labels[:700]
+        X_test = datasets[700:]  # 第700到最后一个数
+        y_test = labels[700:]
+        return X_train, y_train, X_test, y_test
+
 
 if __name__ == '__main__':
     _csv_util = CSVUtil()

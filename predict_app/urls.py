@@ -32,4 +32,10 @@ urlpatterns = [
     # POST，kmeans已训练模型预测数据集
     path('kmeans/predict/', views.kmeans_predict),
 
+    # POST，深度神经网络测试并评价模型
+    path('dnn/training/', views.dnn_training),
+
+    # POST，深度神经网络预测数据集缺陷
+    path('dnn/predict/', views.dnn_predict),
+
 ]

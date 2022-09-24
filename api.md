@@ -247,7 +247,7 @@ base64str为图片的base64编码字符串
 
 
 
-### 6.  获取用k最近邻预测数据集的饼状图
+### 6.  获取用kmeans预测数据集的饼状图
 
 #### Request
 
@@ -299,7 +299,27 @@ base64str为图片的base64编码字符串
 
 
 
-### 7. 获取当前数据库中已有训练记录
+### 7.获取数据集用dnn算法训练模型得到到测试结果图
+
+- Method: **POST**
+- URL: `dnn/training/`
+- Parameters:
+
+同上描述
+
+
+
+### 8.获取用dnn预测集的饼状图
+
+- Method: **POST**
+- URL: `dnn/predict/`
+- Parameters:
+
+同上描述
+
+
+
+### 9. 获取当前数据库中已有训练记录
 
 #### Request
 
@@ -328,4 +348,6 @@ base64str为图片的base64编码字符串
 ![](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220911171050488.png)
 
 ![image-20220911171111158](https://ressmatthew-picture-cloud-storage.oss-cn-hangzhou.aliyuncs.com/img/image-20220911171111158.png)
+
+
 
