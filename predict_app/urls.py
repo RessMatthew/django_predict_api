@@ -38,4 +38,10 @@ urlpatterns = [
     # POST，深度神经网络预测数据集缺陷
     path('dnn/predict/', views.dnn_predict),
 
+    # POST，深度神经网络测试并评价模型
+    path('ensemble/training/', views.ensemble_training),
+
+    # POST，深度神经网络预测数据集缺陷
+    path('ensemble/predict/', views.ensemble_predict),
+
 ]

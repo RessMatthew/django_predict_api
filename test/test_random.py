@@ -19,9 +19,9 @@ def test_random(file_path):
     """
     datasets, labels = data_handle(file_path)  # 对数据集进行处理
     X_test = datasets[:]
-    clf0 = joblib.load("/training/random.pkl")
+    clf0 = joblib.load("../static/training_model/ensemble.pkl")
     y_predict = clf0.predict(X_test)  # 使用分类器对测试集进行预测
-    np.savetxt('/result/random_result.txt', y_predict)
+    np.savetxt('../static/result/ensemble_result.txt', y_predict)
     print(y_predict)
     return y_predict
 
@@ -70,5 +70,5 @@ def random_predict(file_path):
 
 
 if __name__ == '__main__':
-    random_predict('/dataset/SOFTLAB/ar3.csv')
+    random_predict('../static/dataset/SOFTLAB/PC3.csv')
 

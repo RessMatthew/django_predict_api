@@ -2,6 +2,7 @@ class CONSTANTS:
     """常量类"""
 
     #  数据集文件路径,这种路径仅用于测试方法，api不能用
+
     AR1CSV = "../static/dataset/SOFTLAB/ar1.csv"
     AR3CSV = "../static/dataset/SOFTLAB/ar3.csv"
     AR4CSV = "../static/dataset/SOFTLAB/ar4.csv"
@@ -19,3 +20,7 @@ class CONSTANTS:
     KNN_PREDICT = "static/images/knn_predict.png"
     KMEANS_RESULT = "static/images/kmeans_result.png"
     KMEANS_PREDICT = "static/images/kmeans_predict.png"
+    ENSEMBLE_RESULT = "static/images/ensemble_result.png"
+    ENSEMBLE_PREDICT = "static/images/ensemble_predict.png"
+    DNN_RESULT = "static/images/dnn_result.png"
+    DNN_PREDICT = "static/images/dnn_predict.png"
