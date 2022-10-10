@@ -27,10 +27,8 @@ DEBUG = True
 
 # 配置服务器ip
 ALLOWED_HOSTS = [
-    '101.34.37.235',
+    '',  # 你的服务器HOST
     '127.0.0.1',
-    '1.12.249.224',
-    'danaier.top',
     '0.0.0.0:8000',
 ]
 
@@ -74,7 +72,6 @@ ROOT_URLCONF = "django_predict_api.urls"
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
-
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -112,8 +109,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'defect_predict',
         'USER': 'root',
-        'PASSWORD': 'xiewantong.123',
-        'HOST': '101.34.37.235',
+        'PASSWORD': '',  # 密码
+        'HOST': '',  # 数据库HOST
         'PORT': '3306'
     }
 }
